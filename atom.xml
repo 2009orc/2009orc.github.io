@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://2009orc.github.io/atom.xml" rel="self"/>
   <link href="http://2009orc.github.io/"/>
-  <updated>2014-10-17T14:56:46+08:00</updated>
+  <updated>2014-10-17T15:21:43+08:00</updated>
   <id>http://2009orc.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -64,6 +64,24 @@ git push origin source</p>
 rake new_post[&ldquo;title&rdquo;]
 rake generate
 rake deploy</p>
+
+<p>(reke deploy 遇到的问题 如果你发觉老是失败 而且是提示pull 根据以下方法会成功)
+Without deleting the repository</p>
+
+<p>Please keep in mind this is not considered best practice, but it may work for you.</p>
+
+<p>The solution is to force a push on the master branch.</p>
+
+<p>Edit the Rakefile and look for this line:</p>
+
+<p>system &ldquo;git push origin #{deploy_branch}&rdquo;
+Alter the line by adding a plus (+) before the #{deploy_branch} tag:</p>
+
+<p>system &ldquo;git push origin +#{deploy_branch}&rdquo;
+Run the command</p>
+
+<p>rake deploy
+It should succeed.</p>
 ]]></content>
   </entry>
   
