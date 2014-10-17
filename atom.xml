@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://2009orc.github.io/atom.xml" rel="self"/>
   <link href="http://2009orc.github.io/"/>
-  <updated>2014-10-17T12:16:10+08:00</updated>
+  <updated>2014-10-17T14:56:46+08:00</updated>
   <id>http://2009orc.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -36,7 +36,34 @@
     <link href="http://2009orc.github.io/blog/2014/10/17/how-to-deploy-octopress-blog/"/>
     <updated>2014-10-17T10:03:30+08:00</updated>
     <id>http://2009orc.github.io/blog/2014/10/17/how-to-deploy-octopress-blog</id>
-    <content type="html"><![CDATA[<p>fdhsgsgjsfsjfljdfs</p>
+    <content type="html"><![CDATA[<p>Before You Begin
+1.Install Git.
+2.Install Ruby 1.9.3 or greater rbenv or RVM
+If ruby &ndash;version doesn&rsquo;t say you&rsquo;re using Ruby at least 1.9.3, revisit your rbenv or RVM installation.</p>
+
+<p>//Setup Octopress
+git clone git://github.com/imathis/octopress.git octopress
+cd octopress
+//install dependencies
+gem install bundler
+rbenv rehash
+bundle install
+//Install the default Octopress theme
+rake install</p>
+
+<p>Create a new Github repository and name the repository with the format username.github.io, where username is your GitHub user name or organization name.</p>
+
+<p>rake setup_github_pages
+rake generate
+rake deploy
+git add .
+git commit -m &lsquo;your message&rsquo;
+git push origin source</p>
+
+<p>//Blog Posts
+rake new_post[&ldquo;title&rdquo;]
+rake generate
+rake deploy</p>
 ]]></content>
   </entry>
   
