@@ -6,4 +6,32 @@ comments: true
 categories: 
 ---
 
-fdhsgsgjsfsjfljdfs
+Before You Begin
+1.Install Git.
+2.Install Ruby 1.9.3 or greater rbenv or RVM
+If ruby --version doesn't say you're using Ruby at least 1.9.3, revisit your rbenv or RVM installation.
+
+//Setup Octopress
+git clone git://github.com/imathis/octopress.git octopress
+cd octopress
+//install dependencies
+gem install bundler
+rbenv rehash
+bundle install
+//Install the default Octopress theme
+rake install
+
+Create a new Github repository and name the repository with the format username.github.io, where username is your GitHub user name or organization name.
+
+rake setup_github_pages
+rake generate
+rake deploy
+git add .
+git commit -m 'your message'
+git push origin source
+
+//Blog Posts
+rake new_post["title"]
+rake generate
+rake deploy
+
